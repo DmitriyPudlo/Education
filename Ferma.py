@@ -153,7 +153,6 @@ ferma = [goose_grey, goose_white, cow_manya, lamb_barashek, lamb_kudryavy, chike
 weigth_animal = [animal.weigth for animal in ferma]
 print(sum(weigth_animal))
 print(max(weigth_animal))
-print('Hello World')
 
 
 
