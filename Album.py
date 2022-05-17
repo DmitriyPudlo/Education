@@ -29,12 +29,12 @@ class Album:
 
 
 steal_is_album = Album('Steal This Album!', 'System of a Down')
-boom = Track('Boom!', 2)
+boom = Track('Boom!', 5)
 add = Track('A.D.D.', 3)
 mr_jack = Track('Mr.Jack', 4)
+new_track_evgen = Track('Evgen', 10)
 
 steal_is_album.add_track(boom)
-steal_is_album.add_track(add)
 steal_is_album.add_track(mr_jack)
 
 steal_is_album.get_tracks()
