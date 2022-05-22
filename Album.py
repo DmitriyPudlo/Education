@@ -14,6 +14,10 @@ class Track:
         return self.time >= other
     def __le__(self, other):
         return self.time <= other
+    def __eq__(self, other):
+        return self.time == other
+    def __ne__(self, other):
+        return self.time != other
 
 
 class Album:
