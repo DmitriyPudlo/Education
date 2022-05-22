@@ -1,42 +1,35 @@
-class Goose:
+class Animals:
     def __init__(self, name, weight):
         self.name = name
         self.weigth = weight
-        self.voice = 'Га-га'
         self.__resurs = 4
 
     def feed(self):
         if self.__resurs == 5:
-            return 'Гусь сыт'
+            print('Животное уже сытое!')
         else:
             self.__resurs += 1
-            return 'Гуся покормили'
+            print('Животное покормлено!')
 
+    def put(self):
+        print('Животное довольно урчит')
+
+
+class Goose(Animals):
+    voice = 'Га-га'
 
     def collect_eggs(self):
         if self.__resurs == 0:
-            return 'У гуся нет яиц'
+            print('У гуся нет яиц')
         else:
             self.__resurs -= 1
-            return 'Яйца собраны'
+            print('Яйца собраны')
 
 
-class Cow:
-    def __init__(self, name, weight):
-        self.name = name
-        self.weigth = weight
-        self.voice = 'Му-му'
-        self.__resurs = 4
+class Cow(Animals):
+    voice = 'Му-му'
 
-    def feed(self):
-        if self.__resurs == 5:
-            return 'Корова наелась'
-        else:
-            self.__resurs += 1
-            return 'Корову накормили'
-
-
-    def collect_eggs(self):
+    def milk(self):
         if self.__resurs == 0:
             return 'У коровы нет молока'
         else:
@@ -44,23 +37,10 @@ class Cow:
             return 'Вы надоили много вкусного молочка'
 
 
-class Lamb:
-    def __init__(self, name, weight):
-        self.name = name
-        self.weigth = weight
-        self.voice = 'Бе-бе'
+class Lamb(Animals):
+    voice = 'Бе-бе'
 
-        self.__resurs = 4
-
-    def feed(self):
-        if self.__resurs == 5:
-            return 'Овечка наелась'
-        else:
-            self.__resurs += 1
-            return 'Овечка поела'
-
-
-    def collect_eggs(self):
+    def cut(self):
         if self.__resurs == 0:
             return 'У овечки еще не выросла шерсть'
         else:
@@ -68,20 +48,8 @@ class Lamb:
             return 'Овечка пострижена'
 
 
-class Chicken:
-    def __init__(self, name, weight):
-        self.name = name
-        self.weigth = weight
-        self.voice = 'Кут-кудах'
-        self.__resurs = 4
-
-    def feed(self):
-        if self.__resurs == 5:
-            return 'Курочка сытая'
-        else:
-            self.__resurs += 1
-            return 'Курочку покормили'
-
+class Chicken(Animals):
+    voice = 'Кут-кудах'
 
     def collect_eggs(self):
         if self.__resurs == 0:
@@ -91,22 +59,10 @@ class Chicken:
             return 'Яйца собраны'
 
 
-class Goat:
-    def __init__(self, name, weight):
-        self.name = name
-        self.weigth = weight
-        self.voice = 'Ме-ме'
-        self.__resurs = 4
+class Goat(Animals):
+    voice = 'Ме-ме'
 
-    def feed(self):
-        if self.__resurs == 5:
-            return 'Коза сытая'
-        else:
-            self.__resurs += 1
-            return 'Коза поела'
-
-
-    def collect_eggs(self):
+    def milk(self):
         if self.__resurs == 0:
             return 'У коза нет молока'
         else:
@@ -114,20 +70,8 @@ class Goat:
             return 'Надоили много вкусного молочка'
 
 
-class Duck:
-    def __init__(self, name, weight):
-        self.name = name
-        self.weigth = weight
-        self.voice = 'Кря-кря'
-        self.__resurs = 4
-
-    def feed(self):
-        if self.__resurs == 5:
-            return 'Утка сытая'
-        else:
-            self.__resurs += 1
-            return 'Утку покормили'
-
+class Duck(Animals):
+    voice = 'Кря-кря'
 
     def collect_eggs(self):
         if self.__resurs == 0:
@@ -151,8 +95,13 @@ duck_kryakva = Duck('Кряква', 5)
 ferma = [goose_grey, goose_white, cow_manya, lamb_barashek, lamb_kudryavy, chiken_koko, chiken_kukareku, goat_roga, goat_kopita, duck_kryakva]
 
 weigth_animal = [animal.weigth for animal in ferma]
-print(sum(weigth_animal))
-print(max(weigth_animal))
+
+
+print(f'Масса всех животных равна {sum(weigth_animal)}кг')
+
+for animal in ferma:
+    if animal.weigth == max(weigth_animal):
+        print(f'Самое тяжелое животное это {animal.name}. Его масса равна {animal.weigth}кг')
 
 
 
