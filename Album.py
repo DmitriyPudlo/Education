@@ -6,6 +6,15 @@ class Track:
     def __str__(self):
         return f'{self.name} - {self.time} min'
 
+    def __gt__(self, other):
+        return self.time > other
+    def __lt__(self, other):
+        return self.time < other
+    def __ge__(self, other):
+        return self.time >= other
+    def __le__(self, other):
+        return self.time <= other
+
 
 class Album:
     def __init__(self, name, group):
@@ -35,6 +44,7 @@ Tracks:
 '''
 
 
+
 steal_is_album = Album('Steal This Album!', 'System of A Down')
 boom = Track('Boom!', 5)
 add = Track('A.D.D.', 3)
@@ -51,3 +61,5 @@ print(steal_is_album.get_duration())
 print(boom)
 
 print(steal_is_album)
+
+print(boom > add)
