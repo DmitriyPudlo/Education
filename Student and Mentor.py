@@ -39,14 +39,19 @@ class Student:
 
     def __gt__(self, other):
         return self.mean_grade() > other
+
     def __lt__(self, other):
         return self.mean_grade() < other
+
     def __ge__(self, other):
         return self.mean_grade() >= other
+
     def __le__(self, other):
         return self.mean_grade() <= other
+
     def __eq__(self, other):
         return self.mean_grade() == other
+
     def __ne__(self, other):
         return self.mean_grade() != other
 
@@ -78,14 +83,19 @@ class Lecturer(Mentor):
 
     def __gt__(self, other):
         return self.mean_grade() > other
+
     def __lt__(self, other):
         return self.mean_grade() < other
+
     def __ge__(self, other):
         return self.mean_grade() >= other
+
     def __le__(self, other):
         return self.mean_grade() <= other
+
     def __eq__(self, other):
         return self.mean_grade() == other
+
     def __ne__(self, other):
         return self.mean_grade() != other
 
@@ -117,6 +127,7 @@ def calculat_average_grade_for_course(students, name_course):
                 mean_grade += sum(grade)
     return round(mean_grade / total, 1)
 
+
 def calculat_average_grade_for_lecture(lectors, name_lecture):
     total = 0
     mean_grade = 0
@@ -126,6 +137,7 @@ def calculat_average_grade_for_lecture(lectors, name_lecture):
                 total = len(grade)
                 mean_grade += sum(grade)
     return round(mean_grade / total, 1)
+
 
 best_student = Student('Ruoy', 'Eman', 'your_gender')
 best_student.courses_in_progress += ['Python']
