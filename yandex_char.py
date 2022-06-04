@@ -14,4 +14,4 @@ for i in range(len(l)):
             end = i
         temp = 0
 start = end - total
-print(l[start], l[end])
+print(start, end)
