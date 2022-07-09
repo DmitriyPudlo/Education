@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS client(
+id integer NOT NULL GENERATED ALWAYS AS IDENTITY,
+first_name VARCHAR(20) NOT NULL,
+last_name VARCHAR(20) NOT NULL,
+e_mail VARCHAR(50),
+CONSTRAINT client_pkey PRIMARY KEY (id));
+
+CREATE TABLE IF NOT EXISTS number_phone(
+id integer NOT NULL GENERATED ALWAYS AS IDENTITY,
+number VARCHAR(20),
+id_client INT NOT NULL,
+CONSTRAINT number_phone_pkey PRIMARY KEY (id),
+FOREIGN KEY (id_client) REFERENCES client(id));
+
