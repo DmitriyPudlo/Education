@@ -1,12 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = 'https://2ip.ru/'
+url = 'https://habr.com/ru/all/'
 
 response = requests.get(url)
 
 soup = BeautifulSoup(response.text, features='lxml')
 
-soup = soup.find('div', class_='ip').find('span').text
+soup = soup.find('a', class_='tm-article-snippet__hubs-item-link')
 
 print(soup)
