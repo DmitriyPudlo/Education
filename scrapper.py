@@ -7,6 +7,6 @@ response = requests.get(url)
 
 soup = BeautifulSoup(response.text, features='lxml')
 
-soup = soup.find('div', class_='ip-info').find('div', class_='ip').find('span').text
+soup = soup.find('div', class_='ip').find('span').text
 
 print(soup)
