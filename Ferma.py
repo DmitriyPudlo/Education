@@ -103,5 +103,7 @@ for animal in ferma:
     if animal.weigth == max(weigth_animal):
         print(f'Самое тяжелое животное это {animal.name}. Его масса равна {animal.weigth}кг')
 
+print(goose_white.voice)
+
 
 
