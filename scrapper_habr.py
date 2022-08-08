@@ -32,7 +32,7 @@ for all_info in soup:
         if tag.find('span').text in KEYWORDS:
             date = all_info.find('span', class_='tm-article-snippet__datetime-published').find('time').get('title')
             head = all_info.find('a', class_='tm-article-snippet__title-link').text
-            url_col = 'https://habr.com/' + all_info.find('a', class_='tm-article-snippet__title-link').get('href')
+            url_col = 'https://habr.com' + all_info.find('a', class_='tm-article-snippet__title-link').get('href')
             result.append([date, head, url_col])
 
 
