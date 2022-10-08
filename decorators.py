@@ -26,6 +26,3 @@ def create_log(func):
 @add_path('D:/')
 def hello(x):
     return f'Hello {x}'
-
-
-print(hello('Vasya'))
